@@ -12,6 +12,10 @@ export const strings = {
     Usuarios: 'Usuários',
     Produtos: 'Produtos',
     Funcionarios: 'Funcionários',
+    Nome: 'Nome',
+    Email: 'Email',
+    Cpf_cnpj: 'CPF/CNPJ',
+    Acoes: 'Ações',
   },
   en: {
     titleList: 'Registered Users',
@@ -26,5 +30,9 @@ export const strings = {
     Usuarios: 'Users',
     Produtos: 'Products',
     Funcionarios: 'Employees',
+    Nome: 'Name',
+    Email: 'Email',
+    Cpf_cnpj: 'CPF/CNPJ',
+    Acoes: 'Actions', 
   },
 };
