@@ -12,13 +12,16 @@ import {
   FaUsers,
 } from "react-icons/fa";
 
-export function Sidebar() {
+type SidebarProps = {
+  isOpen: boolean;
+  toggle: () => void;
+};
+
+export function Sidebar({ isOpen, toggle }: SidebarProps) {
   const { theme } = useContext(ThemeContext);
-  const [isOpen, setIsOpen] = useState(true);
   const [gerenciamentoOpen, setGerenciamentoOpen] = useState(false);
   const t = useTranslation();
 
-  const toggleSidebar = () => setIsOpen(!isOpen);
   const toggleGerenciamento = () => setGerenciamentoOpen(!gerenciamentoOpen);
 
   const bgColor = theme === "dark" ? "#1e1e2f" : "#ffffff";
@@ -47,7 +50,7 @@ export function Sidebar() {
           <h4 style={{ color: "#f8a100", margin: 0 }}>{t.nameProject}</h4>
         )}
         <button
-          onClick={toggleSidebar}
+          onClick={toggle}
           className="btn btn-light btn-sm"
           style={{
             borderRadius: "50%",
@@ -89,7 +92,7 @@ export function Sidebar() {
             <span>{gerenciamentoOpen ? <FaChevronDown /> : <FaChevronRight />}</span>
           )}
         </div>
-        {/* Submenu */}
+
         {gerenciamentoOpen && isOpen && (
           <div style={{ paddingLeft: "1.5rem", marginTop: "0.5rem" }}>
             <div className="d-flex align-items-center gap-2 mb-2">
