@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { UserListView } from "../views/UserListView";
 import { UserFormView } from "../views/UserFormView";
 import UsersView from "../views/UsersView";
+import { ProductView } from "../views/ProductView";
 
 
 const AppRoutes = () => (
@@ -11,7 +12,7 @@ const AppRoutes = () => (
     <Route path="/" element={<UserListView />}     />
     <Route path="/novo" element={<UserFormView/>} />
     <Route path="/gerenciamento/usuarios" element={<UsersView />} />
-      {/* <Route path="/gerenciamento/produtos" element={<ProductsView />} /> */}
+      <Route path="/gerenciamento/produtos" element={<ProductView />} />
       {/* <Route path="/gerenciamento/funcionarios" element={<EmployeesView />} /> */}
   </Routes>
 );
