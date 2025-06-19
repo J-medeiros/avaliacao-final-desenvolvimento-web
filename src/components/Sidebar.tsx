@@ -11,6 +11,7 @@ import {
   FaBox,
   FaUsers,
 } from "react-icons/fa";
+import { Link } from "react-router-dom"; // IMPORTANTE
 
 type SidebarProps = {
   isOpen: boolean;
@@ -62,10 +63,13 @@ export function Sidebar({ isOpen, toggle }: SidebarProps) {
         </button>
       </div>
 
-      <div className="mb-3 d-flex align-items-center gap-2">
-        <FaThLarge />
-        {isOpen && <span>{t.Painel}</span>}
-      </div>
+      {/* Painel principal */}
+      <Link to="/" style={{ textDecoration: "none", color: textColor }}>
+        <div className="mb-3 d-flex align-items-center gap-2">
+          <FaThLarge />
+          {isOpen && <span>{t.Painel}</span>}
+        </div>
+      </Link>
 
       <div
         style={{
@@ -95,18 +99,24 @@ export function Sidebar({ isOpen, toggle }: SidebarProps) {
 
         {gerenciamentoOpen && isOpen && (
           <div style={{ paddingLeft: "1.5rem", marginTop: "0.5rem" }}>
-            <div className="d-flex align-items-center gap-2 mb-2">
-              <FaUser />
-              <span>{t.Usuarios}</span>
-            </div>
-            <div className="d-flex align-items-center gap-2 mb-2">
-              <FaBox />
-              <span>{t.Produtos}</span>
-            </div>
-            <div className="d-flex align-items-center gap-2">
-              <FaUsers />
-              <span>{t.Funcionarios}</span>
-            </div>
+            <Link to="/gerenciamento/usuarios" style={{ textDecoration: "none", color: textColor }}>
+              <div className="d-flex align-items-center gap-2 mb-2">
+                <FaUser />
+                <span>{t.Usuarios}</span>
+              </div>
+            </Link>
+            <Link to="/gerenciamento/produtos" style={{ textDecoration: "none", color: textColor }}>
+              <div className="d-flex align-items-center gap-2 mb-2">
+                <FaBox />
+                <span>{t.Produtos}</span>
+              </div>
+            </Link>
+            <Link to="/gerenciamento/funcionarios" style={{ textDecoration: "none", color: textColor }}>
+              <div className="d-flex align-items-center gap-2">
+                <FaUsers />
+                <span>{t.Funcionarios}</span>
+              </div>
+            </Link>
           </div>
         )}
       </div>
