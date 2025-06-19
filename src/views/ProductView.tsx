@@ -4,11 +4,13 @@ import { ProductCard } from "../components/ProductCard";
 import type { ProductModelInterface } from "../models/Product.Model.Interface";
 import { ThemeContext } from "../context/ThemeContext";
 import { ProductFormModal } from "../components/ProductFormModal";
+import { useTranslation } from "../hooks/useTranslation";
 
 export const ProductView = () => {
   const [produtos, setProdutos] = useState<ProductModelInterface[]>([]);
   const [showModal, setShowModal] = useState(false);
   const { theme } = useContext(ThemeContext);
+  const t = useTranslation();
 
   // Carrega produtos
   useEffect(() => {
@@ -44,7 +46,7 @@ export const ProductView = () => {
       padding: "2rem", minHeight: "100vh"
     }}>
       <h2 style={{ fontSize: "1.5rem", fontWeight: "bold", marginBottom: "1rem" }}>
-        Lista de Produtos
+        {t.ListaProdutos}
       </h2>
 
       <button
@@ -59,7 +61,7 @@ export const ProductView = () => {
           cursor: "pointer",
         }}
       >
-        Adicionar Produto
+        {t.AdicionarProduto}
       </button>
 
       <div
