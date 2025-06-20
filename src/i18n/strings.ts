@@ -38,6 +38,9 @@ export const strings = {
     Foto: 'Foto',
     ListaProdutos: 'Lista de Produtos',
     AdicionarProduto: 'Adicionar Produto',
+    TituloGaficoBarras: 'Comparativo Preço x Quantidade (Gráfico de Barras)',
+    GerarRelatorioPDF: 'Gerar Relatório PDF',
+    TituloGaficoPizza: 'Produtos Vendidos (Gráfico de Pizza)',
   },
   en: {
     titleList: 'Registered Users',
@@ -78,5 +81,8 @@ export const strings = {
     Foto: 'Photo',
     ListaProdutos: 'Product List',
     AdicionarProduto: 'Add Product',
+    TituloGaficoBarras: 'Price vs. Quantity Comparison (Bar Chart)',
+    GerarRelatorioPDF: 'Generate PDF Report',
+    TituloGaficoPizza: 'Products Sold (Pie Chart)',
   },
 };
