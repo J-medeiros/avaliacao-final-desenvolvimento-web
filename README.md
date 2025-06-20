@@ -43,6 +43,9 @@ src/
 # Instale as dependências
 npm install
 
+# Instale o npm router-dom
+npm install react-router-dom
+
 # Inicie o servidor de desenvolvimento
 npm run dev
 ```
