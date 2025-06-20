@@ -8,6 +8,7 @@ import {
   Legend,
 } from "recharts";
 import { ThemeContext } from "../context/ThemeContext";
+import { useTranslation } from "../hooks/useTranslation";
 
 interface PieChartViewProps {
   pieData: { name: string; value: number }[];
@@ -21,13 +22,15 @@ const GraficoPizza: React.FC<PieChartViewProps> = ({
   gerarRelatorio,
 }) => {
   const { theme } = useContext(ThemeContext);
+  const t = useTranslation();
 
   const bgColor = theme === "dark" ? "#1e1e2f" : "#ffffff";
   const textColor = theme === "dark" ? "#f0f0f0" : "#1a1a1a";
   const borderColor = theme === "dark" ? "#333" : "#ccc";
 
   return (
-    <section id="grafico-pizza"
+    <section
+      id="grafico-pizza"
       style={{
         backgroundColor: bgColor,
         color: textColor,
@@ -38,12 +41,34 @@ const GraficoPizza: React.FC<PieChartViewProps> = ({
         boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
       }}
     >
-      <h3 style={{ fontSize: "1.25rem", fontWeight: "600", marginBottom: "1.5rem" }}>
-        Produtos Vendidos (Gráfico de Pizza)
+      <h3
+        style={{
+          fontSize: "1.25rem",
+          fontWeight: "600",
+          marginBottom: "1.5rem",
+        }}
+      >
+        {t.TituloGaficoPizza}
       </h3>
 
-      <div style={{ display: "flex", gap: "2rem", justifyContent: "center", alignItems: "center", padding: "1.25rem 0" }}>
-        <div style={{ width: "50%", height: "300px", display: "flex", justifyContent: "center", alignItems: "center" }}>
+      <div
+        style={{
+          display: "flex",
+          gap: "2rem",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "1.25rem 0",
+        }}
+      >
+        <div
+          style={{
+            width: "50%",
+            height: "300px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie
@@ -67,7 +92,13 @@ const GraficoPizza: React.FC<PieChartViewProps> = ({
         </div>
       </div>
 
-      <div style={{ marginTop: "1.5rem", display: "flex", justifyContent: "flex-start" }}>
+      <div
+        style={{
+          marginTop: "1.5rem",
+          display: "flex",
+          justifyContent: "flex-start",
+        }}
+      >
         <button
           onClick={gerarRelatorio}
           style={{
@@ -79,7 +110,7 @@ const GraficoPizza: React.FC<PieChartViewProps> = ({
             cursor: "pointer",
           }}
         >
-          Gerar Relatório PDF
+          {t.GerarRelatorioPDF}
         </button>
       </div>
     </section>

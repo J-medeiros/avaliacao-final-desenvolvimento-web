@@ -10,6 +10,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { ThemeContext } from "../context/ThemeContext";
+import { useTranslation } from "../hooks/useTranslation";
 
 interface BarGraphViewProps {
   barData: { name: string; Quantidade: number; Preco: number }[];
@@ -25,6 +26,7 @@ const GraficoBarras: React.FC<BarGraphViewProps> = ({
   const bgColor = theme === "dark" ? "#1e1e2f" : "#ffffff";
   const textColor = theme === "dark" ? "#f0f0f0" : "#1a1a1a";
   const borderColor = theme === "dark" ? "#333" : "#ccc";
+  const t = useTranslation();
 
   return (
     <section id="grafico-barras"
@@ -38,8 +40,8 @@ const GraficoBarras: React.FC<BarGraphViewProps> = ({
         boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
       }}
     >
-      <h3 style={{ fontSize: "1.25rem", fontWeight: "600", marginBottom: "1.5rem" }}>
-        Comparativo Preço x Quantidade (Gráfico de Barras)
+      <h3 style={{ fontSize: "1.25rem", fontWeight: "600", marginBottom: "1.5rem" }}> 
+        {t.TituloGaficoBarras}
       </h3>
 
       <div style={{ display: "flex", gap: "2rem", justifyContent: "center", alignItems: "center", padding: "1.25rem 0" }}>
@@ -70,7 +72,7 @@ const GraficoBarras: React.FC<BarGraphViewProps> = ({
             cursor: "pointer",
           }}
         >
-          Gerar Relatório PDF
+         {t.GerarRelatorioPDF}
         </button>
       </div>
     </section>

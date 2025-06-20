@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import { UserFormView } from "../views/UserFormView";
 import UsersView from "../views/UsersView";
 import { ProductView } from "../views/ProductView";
@@ -7,7 +7,7 @@ import DashboardSalesView from "../views/DashboardSalesView";
 
 const AppRoutes = () => (
   <Routes>
-    <Route path="/" element={<DashboardSalesView />} />
+    <Route path="/" element={<Navigate to="/dashboard" />} />
     <Route path="/dashboard" element={<DashboardSalesView />} />
     <Route path="/novo" element={<UserFormView />} />
     <Route path="/gerenciamento/usuarios" element={<UsersView />} />
