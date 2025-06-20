@@ -55,9 +55,11 @@ O projeto estará disponível em: [http://localhost:5173](http://localhost:5173)
 
 - ✅ Tema claro/escuro com persistência
 - ✅ Idioma PT/EN com persistência
-- ✅ Listagem de usuários com `useMemo`
-- ✅ Cadastro de usuários com `useCallback`
+- ✅ Listagem de Dados 
+- ✅ Cadastro de usuários/Produtos
 - ✅ Layout responsivo e menu fixo de acessibilidade
+- ✅ Gerar relatorio PDF
+- ✅ Graficos 
 
 ---
 
